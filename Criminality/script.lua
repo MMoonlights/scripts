@@ -40,20 +40,20 @@ local ModsTab = Window:CreateTab({
 AimTab:CreateButton({
   Name = "Aimbot",
   Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/MMoonlights/e/refs/heads/main/Criminality/Aim/Aim.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MMoonlights/e/refs/heads/main/Criminality/Aim/aim.lua"))()
   end,
 })
 
 EspTab:CreateButton({
   Name = "ESP",
   Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/MMoonlights/e/refs/heads/main/Criminality/Esp/Esp.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MMoonlights/e/refs/heads/main/Criminality/Esp/esp.lua"))()
   end,
 })
 
 ModsTab:CreateButton({
   Name = "No Recoil",
   Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/MMoonlights/e/refs/heads/main/Criminality/Utility/No%20Recoil.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MMoonlights/e/refs/heads/main/Criminality/Utility/no%20recoil.lua"))()
   end,
 })
