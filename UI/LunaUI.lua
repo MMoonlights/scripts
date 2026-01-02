@@ -6710,6 +6710,10 @@ function Luna:CreateWindow(WindowSettings)
 		LunaUI.MobileSupport.Visible = false
 	end)
 
+	Window.Destroy = function(_, ...)
+		return Luna:Destroy(...)
+	end
+
 	return Window
 end
 
