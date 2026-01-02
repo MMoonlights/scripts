@@ -1,4 +1,4 @@
-local Interface = loadstring(game:HttpGet("https://raw.githubusercontent.com/Nebula-Softworks/Luna-Interface-Suite/refs/heads/main/source.lua", true))()
+local Interface = loadstring(game:HttpGet("https://raw.githubusercontent.com/MMoonlights/scripts/refs/heads/main/UI/LunaUI.lua", true))()
 
 local InterfaceSettings = {
   Name = "Criminality",
@@ -40,20 +40,20 @@ local ModsTab = Window:CreateTab({
 AimTab:CreateButton({
   Name = "Aimbot",
   Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/MMoonlights/e/refs/heads/main/Criminality/Aim/aim.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MMoonlights/scripts/refs/heads/main/Criminality/Aim/aim.lua"))()
   end,
 })
 
 EspTab:CreateButton({
   Name = "ESP",
   Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/MMoonlights/e/refs/heads/main/Criminality/Esp/esp.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MMoonlights/scripts/refs/heads/main/Criminality/Esp/esp.lua"))()
   end,
 })
 
 ModsTab:CreateButton({
   Name = "No Recoil",
   Callback = function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/MMoonlights/e/refs/heads/main/Criminality/Utility/no%20recoil.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/MMoonlights/scripts/refs/heads/main/Criminality/Utility/no%20recoil.lua"))()
   end,
 })
