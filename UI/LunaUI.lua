@@ -2702,18 +2702,23 @@ function Luna:CreateWindow(WindowSettings)
 		end
 
 		function Tab:Destroy()
-			if Window.CurrentTab == TabSettings.Name then
-				for _, OtherTabButton in ipairs(Navigation.Tabs:GetChildren()) do
-					if OtherTabButton.Name ~= "InActive Template" and OtherTabButton.ClassName == "Frame" and OtherTabButton ~= TabButton then
-						local otherPage = Elements:FindFirstChild(OtherTabButton.Name)
-						if otherPage then
-							Elements.UIPageLayout:JumpTo(otherPage)
-							Window.CurrentTab = OtherTabButton.Name
-							break
+			if TabPage and Window.CurrentTab == TabSettings.Name then
+				local bestIndex
+				local bestName
+				local bestOrder = -math.huge
+				for _, page in ipairs(Elements:GetChildren()) do
+					if page ~= TabPage and page.ClassName == "Frame" and page.Visible and page.LayoutOrder ~= nil and page.LayoutOrder ~= 1000000000 then
+						if page.LayoutOrder > bestOrder then
+							bestOrder = page.LayoutOrder
+							bestIndex = page.LayoutOrder
+							bestName = page.Name
 						end
 					end
 				end
-				if Window.CurrentTab == TabSettings.Name then
+				if bestIndex then
+					Elements.UIPageLayout:JumpToIndex(bestIndex)
+					Window.CurrentTab = bestName
+				else
 					Window.CurrentTab = nil
 				end
 			end
@@ -2722,6 +2727,7 @@ function Luna:CreateWindow(WindowSettings)
 				TabButton:Destroy()
 				TabButton = nil
 			end
+
 			if TabPage then
 				TabPage:Destroy()
 				TabPage = nil
